@@ -21,25 +21,18 @@ namespace LanguageModeling
 
         private void button1_Click(object sender, EventArgs e)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("C:\\Users\\ahmed_000\\Documents\\Visual Studio 2012\\Projects\\NGramsParser\\NGramsParser\\testXML.xml");
-            String xmlString = doc.InnerXml;
-
-            foreach (XmlNode child in doc.DocumentElement.ChildNodes)
-            {
-
-                if (child.NodeType == XmlNodeType.Element)
-                {
-                    richTextBox1.Text += child.InnerText;
-                }
-            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            HtmlAgilityPack.HtmlDocument htmlDoc = new HtmlAgilityPack.HtmlDocument();
-            htmlDoc.Load("C:\\Users\\ahmed_000\\Documents\\Visual Studio 2012\\Projects\\NGramsParser\\NGramsParser\\testHTML.html");
-            richTextBox1.Text = htmlDoc.DocumentNode.InnerText;
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            LoadFile uniForm = new LoadFile();
+            uniForm.Show();
         }
     }
 }
