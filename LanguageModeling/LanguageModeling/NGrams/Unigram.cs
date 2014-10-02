@@ -11,22 +11,22 @@ namespace LanguageModeling.NGrams
     {
         public string regularExpression;
         public HashSet<string> words;
-        public Dictionary<string, int> wordsCounter;
-        public int totalCount;
+        public Dictionary<string, double> wordsCounter;
+        public double totalCount;
         public HashSet<string> wordsCollection;
         public double vocublarySize;
-        public Dictionary<int, int> numberOfUnigramsAndFrequency;
+        public Dictionary<double, double> numberOfUnigramsAndFrequency;
         public int numberOfUnigrams;
 
         public Unigram(HashSet<string> words)
         {
             this.regularExpression = "('?\\w+|\\p{P})";
             this.words = words;
-            this.wordsCounter = new Dictionary<string, int>();
+            this.wordsCounter = new Dictionary<string, double>();
             this.totalCount = 0;
             this.vocublarySize = 0.0;
             this.wordsCollection = new HashSet<string>();
-            this.numberOfUnigramsAndFrequency = new Dictionary<int, int>();
+            this.numberOfUnigramsAndFrequency = new Dictionary<double, double>();
             this.numberOfUnigrams = 0;
         }
 
@@ -45,7 +45,7 @@ namespace LanguageModeling.NGrams
                     Capture c = cc[0];
                     wordsCollection.Add(c.ToString());
              
-                    int counter = 0;
+                    double counter = 0;
 
                     if (wordsCounter.ContainsKey(c.ToString()))
                     {
@@ -74,12 +74,12 @@ namespace LanguageModeling.NGrams
             
         }
 
-        public Dictionary<string, int> afterParsing()
+        public Dictionary<string, double> afterParsing()
         {
             return wordsCounter;
         }
 
-        public Dictionary<int, int> test()
+        public Dictionary<double, double> test()
         {
             return numberOfUnigramsAndFrequency;
         }

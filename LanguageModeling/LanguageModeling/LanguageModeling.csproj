@@ -58,6 +58,7 @@
     <Compile Include="NGrams\NGramsCount.cs" />
     <Compile Include="NGrams\Trigram.cs" />
     <Compile Include="NGrams\Unigram.cs" />
+    <Compile Include="Perplexity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoadFile.cs">
@@ -66,6 +67,8 @@
     <Compile Include="LoadFile.Designer.cs">
       <DependentUpon>LoadFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Smoothing\AddOneSmoothedProbability.cs" />
+    <Compile Include="Smoothing\GoodTuringSmoothedProbabilty.cs" />
     <Compile Include="Unigram.cs">
       <SubType>Form</SubType>
     </Compile>
